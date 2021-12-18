@@ -1,0 +1,21 @@
+
+<h3 class="text-center">
+    People
+</h3>
+<div *ngFor="let person of ($people | async);"  
+    class="my-2">
+    <div class="row m-2" [routerLink]="['/people', person._id]"  >
+        <div class="col-2 img-thumbnail rounded text-center" style="height: 100px; width: 100px;">
+            <img class="img-fluid" alt="person image" 
+            style="height: 100px; width: 100px;"  
+            src="{{person.picture}}"
+            [ngStyle]="{
+                clipPath: 'circle()'
+                }"
+            />
+        </div>
+        <div class="col-10 align-self-center">
+            {{person.name.first}} {{person.name.last}}
+        </div>
+    </div>
+</div>

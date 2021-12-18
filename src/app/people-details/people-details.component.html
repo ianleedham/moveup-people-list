@@ -1,0 +1,18 @@
+<div class="p-3 mx-6" *ngIf="person">
+    <div class="my-5">
+        <h4>Location:</h4>
+        <p>Latitude: {{person.location.latitude}}, Longitude: {{person.location.longitude ?? "-" }}</p>
+    <app-person-location [coords]="person.location" [lable]="person.name.first"></app-person-location>
+    </div>
+    <div class="row">
+        <div class="text-center col-2">
+            <img class="img-fluid rounded" alt="person image" 
+            style="height: 100px; width: 100px;" src="{{person.picture}}"/>
+        </div>
+        <div class="p-3 col-10">
+            <h3>
+                {{person.name.first}} {{person.name.last}}
+            </h3>
+        </div>
+    </div>
+</div> 
